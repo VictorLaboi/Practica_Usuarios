@@ -1,4 +1,5 @@
-﻿using PracticaVentas.Commands;
+﻿using CommunityToolkit.Mvvm.Input;
+using Kanban.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,14 +7,16 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticaVentas.ViewModels
+namespace Kanban.ViewModels
 {
-    public class MainViewModel : ViewModel
+    public partial class MainViewModel : ViewModel
     {
 
         private INavigationServices _services;
 
-        public INavigationServices Services { get => _services;
+        public INavigationServices Services
+        {
+            get => _services;
 
             set
             {
@@ -22,19 +25,16 @@ namespace PracticaVentas.ViewModels
             }
         }
 
-        public RelayCommand NavigateHomeCommand { get; set; }
-        public RelayCommand NavigateManagmentCommand { get; set; }
+
         public MainViewModel(INavigationServices services)
         {
             Services = services;
+        }
 
-            NavigateHomeCommand = new RelayCommand(o => { 
-                Services.Navigation<PersonViewModel>(); 
-            },o => true);
-
-            NavigateManagmentCommand = new RelayCommand(o => { 
-                Services.Navigation<ManagmentViewModel>(); }
-            , o => true);
+        [RelayCommand]
+        public void NavigateHome()
+        {
+            Services.Navigation<KanbanMainViewModel>();
         }
 
     }

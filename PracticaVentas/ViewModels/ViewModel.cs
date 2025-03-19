@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticaVentas.ViewModels
+namespace Kanban.ViewModels
 {
-   public abstract class ViewModel : ViewModelBase
+    public abstract class ViewModel : ViewModelBase, IDisposable
     {
-
+        public virtual void Dispose()
+        {
+        }
     }
 }

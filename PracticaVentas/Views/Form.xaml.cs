@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
-using PracticaVentas.ViewModels;
 
-namespace PracticaVentas.Views
+namespace Kanban.Views
 {
     /// <summary>
-    /// Lógica de interacción para MainRecordsView.xaml
+    /// Lógica de interacción para Form.xaml
     /// </summary>
-    public partial class MainRecordsView : UserControl
+    public partial class Form : UserControl
     {
-        public MainRecordsView()
+        public Form()
         {
             InitializeComponent();
         }
-
     }
 }

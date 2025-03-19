@@ -1,24 +1,24 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Kanban.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PracticaVentas.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticaVentas.HostBuilder
+namespace Kanban.HostBuilder
 {
     public static class AddViewModels
     {
-        public static IHostBuilder AddView(this IHostBuilder hostBuilder) {
-            hostBuilder.ConfigureServices(services => {
-                services.AddSingleton<Func<PersonViewModel>>((s) => () => s.GetRequiredService<PersonViewModel>());
-                services.AddTransient<PersonViewModel>();
-                services.AddSingleton<ManagmentViewModel>();
+        public static IHostBuilder AddView(this IHostBuilder hostBuilder)
+        {
+            hostBuilder.ConfigureServices(services =>
+            {
                 services.AddSingleton<MainViewModel>();
+                services.AddSingleton<KanbanMainViewModel>();
             });
-            return hostBuilder; 
+            return hostBuilder;
         }
 
     }

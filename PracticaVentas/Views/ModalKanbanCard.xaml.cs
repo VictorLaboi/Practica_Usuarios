@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PracticaVentas.Views
+namespace Kanban.Views
 {
     /// <summary>
-    /// Lógica de interacción para UserManagment.xaml
+    /// Lógica de interacción para ModalKanbanCard.xaml
     /// </summary>
-    public partial class UserManagment : UserControl
+    public partial class ModalKanbanCard : Window
     {
-        public UserManagment()
+        public ModalKanbanCard()
         {
             InitializeComponent();
         }

@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModel ="clr-namespace:Kanban.ViewModels"
+                    xmlns:view="clr-namespace:Kanban.Views"
+                    xmlns:viewControl="clr-namespace:Kanban.Views.ViewControl"
+                    >
+    <DataTemplate DataType="{x:Type viewModel:KanbanMainViewModel}">
+        <view:Form/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ViewModel}">
+        <viewControl:FormControlAdmin/>
+    </DataTemplate>
+    
+    
+</ResourceDictionary>

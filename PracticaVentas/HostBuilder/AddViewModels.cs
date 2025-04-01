@@ -1,4 +1,5 @@
-﻿using Kanban.ViewModels;
+﻿using Kanban.Commands;
+using Kanban.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -16,7 +17,11 @@ namespace Kanban.HostBuilder
             hostBuilder.ConfigureServices(services =>
             {
                 services.AddSingleton<MainViewModel>();
+                services.AddTransient<LoginViewModel>();
                 services.AddSingleton<KanbanMainViewModel>();
+                services.AddSingleton<ViewMediator>();
+
+
             });
             return hostBuilder;
         }

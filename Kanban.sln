@@ -5,6 +5,15 @@ VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban", "PracticaVentas\Kanban.csproj", "{025A1D16-12FC-47B4-A243-F50CF88529B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{C26F358B-4CDC-4E77-9FEE-4194C32B27EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityManagment", "EntityManagment\EntityManagment.csproj", "{74376B88-6868-4F48-AC9D-D601EE0B405E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,14 @@ Global
 		{025A1D16-12FC-47B4-A243-F50CF88529B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{025A1D16-12FC-47B4-A243-F50CF88529B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{025A1D16-12FC-47B4-A243-F50CF88529B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26F358B-4CDC-4E77-9FEE-4194C32B27EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26F358B-4CDC-4E77-9FEE-4194C32B27EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26F358B-4CDC-4E77-9FEE-4194C32B27EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26F358B-4CDC-4E77-9FEE-4194C32B27EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74376B88-6868-4F48-AC9D-D601EE0B405E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74376B88-6868-4F48-AC9D-D601EE0B405E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74376B88-6868-4F48-AC9D-D601EE0B405E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74376B88-6868-4F48-AC9D-D601EE0B405E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

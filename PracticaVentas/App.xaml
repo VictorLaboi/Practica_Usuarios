@@ -9,6 +9,10 @@
         <DataTemplate DataType="{x:Type viewModel:KanbanMainViewModel}">
             <view:Form/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:Login/>
+        </DataTemplate>
+
         <ResourceDictionary x:Key="R">
         </ResourceDictionary>
     </Application.Resources>

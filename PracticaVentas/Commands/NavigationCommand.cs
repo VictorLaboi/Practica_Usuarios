@@ -7,40 +7,21 @@ using System.Threading.Tasks;
 
 namespace Kanban.Commands
 {
-    internal class NavigationCommand : ViewModelBase, INavigationServices
+    internal class NavigationCommand :  INavigationServices
     {
-        private ViewModel _currentView;
+        private ViewMediator _viewMediator;
 
         private readonly Func<Type, ViewModel> viewModelFactory;
 
-        public ViewModel CurrentView
+        public NavigationCommand(ViewMediator viewMediator,Func<Type, ViewModel> viewModelFactory)
         {
-            get => _currentView;
-            set
-            {
-                if (value != _currentView) {
-                    _currentView?.Dispose();
-                    _currentView = value;
-                }
-                OnOccurViewChange();
-
-            }
-        }
-
-        public event Action OnViewChange;
-        private void OnOccurViewChange() {
-            OnViewChange?.Invoke();
-        }
-
-        public NavigationCommand(Func<Type, ViewModel> viewModelFactory)
-        {
+            this._viewMediator = viewMediator;
             this.viewModelFactory = viewModelFactory;
         }
 
         public void Navigation<TViewModel>() where TViewModel : ViewModel
         {
-            ViewModel view = viewModelFactory.Invoke(typeof(TViewModel));
-            CurrentView = view;
+            _viewMediator.CurrentViewModel = viewModelFactory.Invoke(typeof(TViewModel));
         }
     }
 }

@@ -14,28 +14,28 @@ namespace Kanban.ViewModels
 
         private INavigationServices _services;
 
-        public INavigationServices Services
-        {
-            get => _services;
+        private bool IsLoggedOn => _auth.IsLoggedOn;
 
-            set
-            {
-                _services = value;
-                OnPropertyChanged(nameof(Services));
-            }
+
+        private ViewMediator _viewMediator; 
+
+        public ViewModel CurrentView => _viewMediator.CurrentViewModel;
+
+        public MainViewModel(INavigationServices services, ViewMediator mediator)
+        {
+            _viewMediator = mediator;
+            _services = services;
+            _viewMediator.CurrentViewModelChanged+= OnCurrentViewModelChanged;
         }
 
-
-        public MainViewModel(INavigationServices services)
+        private void OnCurrentViewModelChanged()
         {
-            Services = services;
+            OnPropertyChanged(nameof(CurrentView));
+        }
+        private void AuthState_Changed() {
+            OnPropertyChanged(nameof(IsLoggedOn));
         }
 
-        [RelayCommand]
-        public void NavigateHome()
-        {
-            Services.Navigation<KanbanMainViewModel>();
-        }
 
     }
 }

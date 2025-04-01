@@ -22,23 +22,17 @@
         </Grid.ColumnDefinitions>
 
         <!-- Menu Panel -->
-        <StackPanel Background="#2E333A"
+        <StackPanel Background="#E74C3C"
                     Width="230"
                     Orientation="Vertical"
                     HorizontalAlignment="Left"
                     Grid.Column="0">
             <!-- Channel Name -->
             <Grid Height="50" VerticalAlignment="Top" Margin="0,30,0,0">
-                <Border Background="#D61734"
-                        Height="25"
-                        CornerRadius="3,0,0,3"
-                        Width="6"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Right" />
-                <TextBlock Text="C #   D E S I G N   P R O"
+                <TextBlock Text="Kanban"
                            Foreground="#FFFFFF"
                            FontFamily="Fonts/#Orbitron Medium"
-                           FontSize="15"
+                           FontSize="50"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center" />
             </Grid>
@@ -51,20 +45,20 @@
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
                 <!-- Main Menu Items -->
-                <MenuItem Header="Usuarios" Template="{StaticResource Menu_Template}" Command="{Binding Path=NavigateHomeCommand}">
+                <MenuItem Header="Main" Template="{StaticResource Menu_Template}" Command="{Binding Path=NavigateLoginCommand}">
                     <MenuItem.Icon>
                         <Image Source="Assets/img_home.png" Stretch="None" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <!-- Other Menu Items go here -->
-                <MenuItem Header="Managment" Template="{StaticResource Menu_Template}" Command="{Binding Path=NavigateManagmentCommand}">
+                <MenuItem Header="Managment" Template="{StaticResource Menu_Template}" Command="{Binding Path=NavigateHomeCommand}">
 
                 </MenuItem>
             </Menu>
         </StackPanel>
 
         <!-- Content Control -->
-        <ContentControl Grid.Column="1" Content="{Binding Path=Services.CurrentView}" />
+        <ContentControl Grid.Column="1" Content="{Binding Path=CurrentView}" />
 
         <!-- Version and Red Border -->
         <TextBlock Text="V1.0"

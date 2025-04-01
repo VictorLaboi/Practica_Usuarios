@@ -18,9 +18,9 @@ namespace Kanban.Views
     /// <summary>
     /// Lógica de interacción para HomePageView.xaml
     /// </summary>
-    public partial class HomePageView : UserControl
+    public partial class Login : UserControl
     {
-        public HomePageView()
+        public Login()
         {
             InitializeComponent();
         }

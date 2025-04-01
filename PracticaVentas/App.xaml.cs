@@ -38,7 +38,9 @@ namespace Kanban
                     throw new InvalidOperationException($"Connection string cannot be null.");
                 }
 
-                services.AddSingleton<INavigationServices, NavigationCommand>();
+
+
+                services.AddTransient<INavigationServices, NavigationCommand>();
 
                 //Registro de Func<Type,VM> para obtener el tipo y utilizarlo en el navigation services. 
                 services.AddSingleton<Func<Type, ViewModel>>(s => viewModelType => (ViewModel)s.GetRequiredService(viewModelType));
@@ -56,8 +58,11 @@ namespace Kanban
 
                 services.AddSingleton<ListWorkspaceHandler>();
 
+
+
                 services.AddSingleton(s => new MainWindow
                 {
+                    
                     DataContext = s.GetRequiredService<MainViewModel>()
                 });
 

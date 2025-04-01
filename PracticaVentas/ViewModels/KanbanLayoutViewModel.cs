@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Kanban.ViewModels
 {
-    internal partial class KanbanLayoutViewModel: ObservableObject
+    internal partial class KanbanLayoutViewModel: ViewModel
     {
         private KanbanMainViewModel _viewModelKanban;
         private KanbanLayout _kanbanLayout;

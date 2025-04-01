@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Kanban.Commands;
 using Kanban.Models;
 using Kanban.Servicios;
 using System;
@@ -17,13 +18,13 @@ namespace Kanban.ViewModels
         private IWorkspaceManagment _managment;
 
         private KanbanWorkspace _workspace;
-        private UserModel _user;
         private ObservableCollection<KanbanWorkspace> _workspaces;
-        private IHandleList<UserModel> _userHandler;
-        public KanbanMainViewModel(IWorkspaceManagment managment, IHandleList<UserModel> userHandler)
+        private LoginViewModel _loginModel;
+        private INavigationServices navigation; 
+        public KanbanMainViewModel(IWorkspaceManagment managment, INavigationServices nav)
         {
+            this.navigation = nav;
             this._managment = managment;
-            this._userHandler = userHandler;
         }
 
         //Generamos get y set para Workspace.
@@ -35,18 +36,6 @@ namespace Kanban.ViewModels
                 if (value != _workspace)
                 {
                     _workspace = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public UserModel User
-        {
-            get => _user;
-            set
-            {
-                if (value != _user)
-                {
-                    _user = value;
                     OnPropertyChanged();
                 }
             }
@@ -72,7 +61,7 @@ namespace Kanban.ViewModels
             if (Workspace == null)
                 Workspace = new KanbanWorkspace();
 
-            _managment.CreateWorkspace(User, Workspace);
+            _managment.CreateWorkspace(_loginModel.User, Workspace);
 
             Workspace = new();
         }

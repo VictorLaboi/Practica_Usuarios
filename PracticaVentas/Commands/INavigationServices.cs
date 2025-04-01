@@ -10,8 +10,6 @@ namespace Kanban.Commands
 {
     public interface INavigationServices
     {
-        ViewModel CurrentView { get; }
-
         void Navigation<T>() where T : ViewModel;
     }
 }
